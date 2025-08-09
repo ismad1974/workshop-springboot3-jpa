@@ -19,14 +19,19 @@ public class TestConfig implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
-		User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
-		User u3 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
-		User u4 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
-		User u5 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
-		User u6 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
+		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "9111111111", "111111");
+		User u2 = new User(null, "Alex Green", "alex@gmail.com", "922222222", "222222");
+		User u3 = new User(null, "Pablo Henrique", "pablo@gmail.com", "93333333333", "333333");
+		User u4 = new User(null, "Jonas Cristian", "jonas@gmail.com", "9444444444", "444444");
+		User u5 = new User(null, "Felipe Castanhalli", "felipe@gmail.com", "95555555555", "555555");
+		User u6 = new User(null, "Gustavo Oliveira", "gustavo@gmail.com", "966666666", "666666");
+		User u7 = new User(null, "Anna Tereza", "ana@gmail.com", "977777777", "777777");
+		User u8 = new User(null, "Fabiano Medeiros", "fabiano@gmail.com", "999999999", "888888");
+		User u9 = new User(null, "Sonia Maria", "sonia@gmail.com", "988888888", "999999");
+		User u10 = new User(null, "Maria Lucia", "maria@gmail.com", "900000000", "121212");
 
-		userRepository.saveAll(Arrays.asList(u1, u2, u3, u4, u5, u6));
+		User[] listUsers = { u1, u2, u3, u4, u5, u6, u7, u8, u9, u10 };
+		userRepository.saveAll(Arrays.asList(listUsers));
 	}
 
 }
