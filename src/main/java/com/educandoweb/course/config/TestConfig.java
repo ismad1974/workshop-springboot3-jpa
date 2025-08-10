@@ -8,9 +8,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.educandoweb.course.entities.Category;
 import com.educandoweb.course.entities.Order;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.entities.enums.OrderStatus;
+import com.educandoweb.course.repositories.CategoryRepository;
 import com.educandoweb.course.repositories.OrderRepository;
 import com.educandoweb.course.repositories.UserRepository;
 
@@ -23,6 +25,9 @@ public class TestConfig implements CommandLineRunner {
 	@Autowired
 	private OrderRepository orderRepository;
 
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "9111111111", "111111");
@@ -52,6 +57,22 @@ public class TestConfig implements CommandLineRunner {
 
 		Order[] listOrders = { o1, o2, o3, o4, o5, o6, o7, o8, o9, o10 };
 		orderRepository.saveAll(Arrays.asList(listOrders));
+		
+		Category cat1 = new Category(null, "Electronics");
+		Category cat2 = new Category(null, "Books");
+		Category cat3 = new Category(null, "Computers");
+		Category cat4 = new Category(null, "Musics");
+		Category cat5 = new Category(null, "Utensils");
+		Category cat6 = new Category(null, "Veiculos");
+	
+		
+		Category[] listCategory= {cat1,cat2,cat3,cat4,cat5,cat6};
+		
+		categoryRepository.saveAll(Arrays.asList(listCategory));
+		
+		
+		
+		
 
 	}
 
